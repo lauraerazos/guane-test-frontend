@@ -1,0 +1,21 @@
+<div class="container animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 cardPadding" *ngFor="let personaje of personajes;">
+            <p-card header={{personaje.name}} styleClass="p-card-shadow">
+                <hr>
+                <div class="row p-card-content">
+                    <div class="col-sm-4">
+                            <img alt="Card" src={{personaje.image}} width="100%" height="100%">
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <h5>{{personaje.species}} - {{personaje.status}}</h5>
+                        <p><b>Created:</b> {{personaje.created | date}}</p>
+                        <button pButton type="button" label="See more" (click)="verDetalles(personaje.id)"></button>
+                    </div>
+
+                </div>
+            </p-card>
+        </div>
+    </div>
+    <p-paginator [first]="first" [rows]="10" [totalRecords]="50" (onPageChange)="onPageChange($event)"></p-paginator>
+</div>

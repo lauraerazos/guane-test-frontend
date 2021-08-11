@@ -1,0 +1,57 @@
+<div class="container principal animated fadeIn">
+    <div class="row rowPadding">
+        <div class="col-md-4 col-sm-12">
+            <img alt="Personaje" src="{{personajeInfo.image}}" width="100%" height="100%">
+        </div>
+        <div class="col-sm-8 info">
+            <div class="row">
+                <h2>{{personajeInfo.name}}</h2>
+                <button [routerLink]="['/principal']" pButton pRipple type="button" label="Back" class="p-button-raised p-button-help p-button-text"></button>
+            </div>
+            <hr>
+            <div class="row">                
+                <div class="col-sm-4">
+                    <p><b>{{personajeInfo.status}} - {{personajeInfo.species}}</b></p>
+                </div>
+                <div class="col-sm-3">
+                    <p><b>Gender:</b> {{personajeInfo.gender}}</p>
+                </div>
+                <div class="col-sm-5">
+                    <p><b>Created:</b> {{personajeInfo.created | date}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5>Origin:</h5>
+                </div>
+                <div class="col-sm-7" >
+                    <p *ngIf="urlOrigen !== '' ">{{origen.name}} - {{origen.dimension}}</p>
+                    <p *ngIf="urlOrigen == '' ">Unknown</p>
+                </div>
+                <div class="col-sm-4" *ngIf="urlOrigen !== '' ">
+                    <p><b>Type: </b>{{origen.type}}</p>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h5>First episode:</h5>
+        </div>
+        <div class="col-sm-4">
+            <p><b>Name:</b> {{episodio.name}} - {{episodio.episode}}</p>
+        </div>
+        <div class="col-sm-4">
+            <p><b>Air date:</b> {{episodio.air_date}}</p>
+        </div>
+        <div class="col-sm-4">
+            <p><b>Created: </b>{{episodio.created | date}}</p>
+        </div>
+        
+    </div>
+</div>
+
+<!--
+                    
+                    
+                    <p>{{personajeInfo.location.name}}</p>-->
