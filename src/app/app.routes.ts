@@ -9,9 +9,9 @@ const ROUTES: Routes = [
     { path: '', redirectTo: 'principal', pathMatch: 'full' }
 ];
   
-/*@NgModule({
-imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
-})*/
+@NgModule({
+    imports: [RouterModule.forRoot(ROUTES)],
+    exports: [RouterModule]
+})
 
-export const APP_ROUTING = RouterModule.forRoot(ROUTES);
+export class AppRoutingModule { }
